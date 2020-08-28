@@ -37,8 +37,6 @@ func (m *Meta) Contribute(og *OpenGraph) error {
 		og.Title = m.Content
 	case m.IsOGDescription():
 		og.Description = m.Content
-	case m.IsDescription() && og.Description == "":
-		og.Description = m.Content
 	case m.IsImage():
 		og.Image = append(og.Image, &OGImage{URL: m.Content})
 	case m.IsSiteName():
